@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :grupode_produto do
-    nome { "MyString" }
+    nome { "Grupo de mouse" }
   end
 end

@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :produto do
-    nome { "MyString" }
-    unidade { 1 }
-    grupodeproduto { "MyString" }
+    nome { "Mouse" }
+    association :grupodeproduto, factory: :unidade
   end
 end
