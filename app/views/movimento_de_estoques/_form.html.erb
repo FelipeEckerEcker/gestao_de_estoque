@@ -1,0 +1,42 @@
+<%= form_with(model: movimento_de_estoque, local: true) do |form| %>
+  <% if movimento_de_estoque.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movimento_de_estoque.errors.count, "error") %> prohibited this movimento_de_estoque from being saved:</h2>
+
+      <ul>
+      <% movimento_de_estoque.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.datetime_select :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantidade %>
+    <%= form.number_field :quantidade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pessoa %>
+    <%= form.text_field :pessoa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :operacao %>
+    <%= form.text_field :operacao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :produto %>
+    <%= form.text_field :produto %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -3,9 +3,11 @@ require 'rails_helper'
 RSpec.describe "pessoas/edit", type: :view do
   before(:each) do
     @pessoa = assign(:pessoa, Pessoa.create!(
-      :endereco => "",
-      :nome => "",
-      :documento => "MyString"
+      :nome => "MyString",
+      :documento => "MyString",
+      :endereco => "MyString",
+      :cidade => "MyString",
+      :estado => "MyString"
     ))
   end
 
@@ -14,11 +16,15 @@ RSpec.describe "pessoas/edit", type: :view do
 
     assert_select "form[action=?][method=?]", pessoa_path(@pessoa), "post" do
 
-      assert_select "input[name=?]", "pessoa[endereco]"
-
       assert_select "input[name=?]", "pessoa[nome]"
 
       assert_select "input[name=?]", "pessoa[documento]"
+
+      assert_select "input[name=?]", "pessoa[endereco]"
+
+      assert_select "input[name=?]", "pessoa[cidade]"
+
+      assert_select "input[name=?]", "pessoa[estado]"
     end
   end
 end
